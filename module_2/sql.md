@@ -1,5 +1,17 @@
 ```sql
-SELECT concat("This is ", name, ", ", (CASE WHEN gender='m' THEN "he " ELSE "she " END), "has email ", email) AS info FROM module2;   
+SELECT 
+    concat(
+        "This is ", 
+        name, 
+        ", ", 
+        (CASE WHEN gender='m' THEN "he " ELSE "she " END), 
+        "has email ", 
+        email
+    ) 
+AS 
+    info 
+FROM 
+    module2;   
 
 +-----------------------------------------------+
 | info                                          |
@@ -13,8 +25,21 @@ SELECT concat("This is ", name, ", ", (CASE WHEN gender='m' THEN "he " ELSE "she
 +-----------------------------------------------+
 ```
 
+
 ```sql
-SELECT concat("We have ", count(*), (CASE WHEN gender='m' THEN " boys!" ELSE " girls!" END)) AS "Gender information:" FROM module2 GROUP BY gender;   
+SELECT 
+    concat(
+        "We have ", 
+        count(*), 
+        (CASE WHEN gender='m' THEN " boys!" ELSE " girls!" END)
+    ) 
+AS 
+    "Gender information:" 
+FROM 
+    module2 
+GROUP BY 
+    gender;   
+
 +---------------------+
 | Gender information: |
 +---------------------+
